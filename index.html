@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bryan With a Why | Questions Nobody Asked Me to Answer</title>
+
+  <meta
+    name="description"
+    content="Bryan With a Why explores strange history, ordinary things, human behavior, and questions that make less sense the longer you think about them."
+  />
+
+  <meta property="og:title" content="Bryan With a Why" />
+  <meta
+    property="og:description"
+    content="Questions nobody asked me to answer."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&family=Special+Elite&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f1eadc;
+      --paper: #f8f3e8;
+      --ink: #141414;
+      --muted: #625f58;
+      --red: #c7362f;
+      --line: rgba(20, 20, 20, 0.16);
+      --shadow: 8px 8px 0 #141414;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
+        var(--bg);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.09;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,0.05),
+          rgba(0,0,0,0.05) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+      z-index: 999;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+
+    .nav {
+      border-bottom: 2px solid var(--ink);
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 85px 0 70px;
+      border-bottom: 2px solid var(--ink);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: "Special Elite", monospace;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+      transform: rotate(-1deg);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(4rem, 9vw, 8.5rem);
+      line-height: 0.84;
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 .why {
+      color: var(--red);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h1 .why::after {
+      content: "?";
+      position: absolute;
+      font-family: "Special Elite", monospace;
+      color: var(--ink);
+      font-size: 0.45em;
+      transform: rotate(8deg);
+      right: -0.4em;
+      top: -0.12em;
+    }
+
+    .hero-copy {
+      margin-top: 32px;
+      max-width: 650px;
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .hero-copy strong {
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 17px 24px;
+      border: 2px solid var(--ink);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .btn-secondary {
+      background: var(--paper);
+    }
+
+    .btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .evidence-card {
+      background: #e6ddcb;
+      border: 2px solid var(--ink);
+      padding: 18px;
+      transform: rotate(2deg);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .evidence-photo {
+      aspect-ratio: 4 / 3;
+      background:
+        linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+        #b8b0a2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Special Elite", monospace;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 30px;
+      border: 1px solid rgba(0,0,0,0.25);
+    }
+
+    .evidence-label {
+      margin: 18px 0 2px;
+      font-family: "Special Elite", monospace;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .red-note {
+      position: absolute;
+      background: var(--red);
+      color: white;
+      padding: 10px 14px;
+      font-family: "Special Elite", monospace;
+      right: -28px;
+      bottom: 45px;
+      transform: rotate(-7deg);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    /* QUESTION STRIP */
+
+    .ticker {
+      border-bottom: 2px solid var(--ink);
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 13px 0;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-block;
+      min-width: 200%;
+      animation: scroll 28s linear infinite;
+      font-family: "Special Elite", monospace;
+      letter-spacing: 0.02em;
+    }
+
+    .ticker-track span {
+      margin-right: 55px;
+    }
+
+    .ticker-track strong {
+      color: #ff776e;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    .section-heading p {
+      max-width: 410px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* FEATURED */
+
+    .featured {
+      background: var(--paper);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .feature-card {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      border: 2px solid var(--ink);
+      background: var(--bg);
+    }
+
+    .feature-image {
+      min-height: 460px;
+      background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        #8d887e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      font-family: "Special Elite", monospace;
+      font-size: 1.3rem;
+      text-align: center;
+      border-right: 2px solid var(--ink);
+    }
+
+    .feature-copy {
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stamp {
+      width: fit-content;
+      border: 2px solid var(--red);
+      color: var(--red);
+      padding: 6px 10px;
+      font-family: "Special Elite", monospace;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+      margin-bottom: 25px;
+    }
+
+    .feature-copy h3 {
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin: 0 0 20px;
+    }
+
+    .feature-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .text-link {
+      margin-top: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .text-link:hover {
+      color: var(--red);
+    }
+
+    /* QUESTIONS */
+
+    .questions {
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .question-card {
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      transition: 0.15s ease;
+    }
+
+    .question-card:nth-child(2) {
+      transform: rotate(-0.7deg);
+    }
+
+    .question-card:nth-child(3) {
+      transform: rotate(0.8deg);
+    }
+
+    .question-card:hover {
+      transform: translateY(-6px) rotate(0deg);
+      box-shadow: 7px 7px 0 var(--ink);
+    }
+
+    .question-image {
+      aspect-ratio: 16 / 10;
+      background: #aaa295;
+      border-bottom: 2px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Special Elite", monospace;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .question-content {
+      padding: 25px;
+    }
+
+    .question-number {
+      font-family: "Special Elite", monospace;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .question-card h3 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+    }
+
+    .question-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--ink);
+      color: var(--paper);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-photo {
+      border: 2px solid var(--paper);
+      min-height: 500px;
+      background: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Special Elite", monospace;
+      transform: rotate(-2deg);
+      box-shadow: 10px 10px 0 var(--red);
+      text-align: center;
+      padding: 30px;
+    }
+
+    .about h2 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      margin: 0 0 30px;
+      text-transform: uppercase;
+    }
+
+    .about h2 span {
+      color: #ff6d64;
+    }
+
+    .about-copy {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #ddd4c6;
+    }
+
+    .about-copy strong {
+      color: white;
+    }
+
+    /* SUBMIT */
+
+    .submit {
+      background: var(--red);
+      color: white;
+      text-align: center;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .submit-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .submit h2 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      text-transform: uppercase;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      margin: 0 0 25px;
+    }
+
+    .submit p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .submit .btn {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--paper);
+      padding: 38px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-weight: 700;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .feature-card,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .question-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-image {
+        border-right: 0;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .about-photo {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero h1 {
+        font-size: clamp(3.4rem, 18vw, 5rem);
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .feature-copy {
+        padding: 28px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .red-note {
+        right: -5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">BRYAN WITH A <span>WHY</span></a>
+
+      <div class="nav-links">
+        <a href="#questions">Questions</a>
+        <a href="#about">Why?</a>
+        <a href="#watch">Watch</a>
+        <a href="#submit">Ask Something</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="eyebrow">
+          AN UNNECESSARILY SERIOUS INVESTIGATION
+        </div>
+
+        <h1>
+          BRYAN<br>
+          WITH A<br>
+          <span class="why">WHY</span>
+        </h1>
+
+        <p class="hero-copy">
+          I have a habit of wondering why completely normal things are normal.
+          Then I look into them until they become <strong>significantly less normal.</strong>
+        </p>
+
+        <div class="hero-actions">
+          <a href="#watch" class="btn btn-primary">
+            Watch the Latest Rabbit Hole →
+          </a>
+
+          <a href="#questions" class="btn btn-secondary">
+            See All Questions
+          </a>
+        </div>
+      </div>
+
+      <div class="evidence-card">
+        <div class="evidence-photo">
+          PLACE A STRANGE PHOTO / SCREENSHOT / FRAME FROM THE LATEST VIDEO HERE
+        </div>
+
+        <div class="evidence-label">
+          EXHIBIT A: This seemed normal five minutes ago.
+        </div>
+
+        <div class="red-note">
+          BUT WHY?
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="ticker">
+    <div class="ticker-track">
+
+      <span><strong>WHY</strong> DO WE WORK 40 HOURS?</span>
+      <span><strong>WHY</strong> DO WE TIP?</span>
+      <span><strong>DID</strong> SOMEONE ACTUALLY TIME TRAVEL?</span>
+      <span><strong>WHO</strong> DECIDED A WEEK HAS 7 DAYS?</span>
+      <span><strong>WHY</strong> DO WE SHAKE HANDS?</span>
+
+      <span><strong>WHY</strong> DO WE WORK 40 HOURS?</span>
+      <span><strong>WHY</strong> DO WE TIP?</span>
+      <span><strong>DID</strong> SOMEONE ACTUALLY TIME TRAVEL?</span>
+      <span><strong>WHO</strong> DECIDED A WEEK HAS 7 DAYS?</span>
+      <span><strong>WHY</strong> DO WE SHAKE HANDS?</span>
+
+    </div>
+  </div>
+
+  <section class="featured" id="watch">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>THE LATEST<br>RABBIT HOLE</h2>
+
+        <p>
+          One question. Too much research. Eventually, an answer.
+          Usually.
+        </p>
+      </div>
+
+      <article class="feature-card">
+
+        <div class="feature-image">
+          YOUTUBE THUMBNAIL / VIDEO IMAGE
+        </div>
+
+        <div class="feature-copy">
+
+          <div class="stamp">
+            CASE FILE #002
+          </div>
+
+          <h3>
+            Why Do We Tip?
+          </h3>
+
+          <p>
+            At some point we built a system where a restaurant tells you the price
+            of dinner, then hands you a small math problem involving the employee's
+            compensation.
+          </p>
+
+          <p>
+            Which raises an extremely reasonable question:
+            <strong>why are we doing this?</strong>
+          </p>
+
+          <a href="#" class="text-link">
+            Watch the Investigation →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <section class="questions" id="questions">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>RECENT<br>QUESTIONS</h2>
+
+        <p>
+          Ordinary things become much stranger when you ask where they came from.
+        </p>
+      </div>
+
+      <div class="question-grid">
+
+        <a href="#" class="question-card">
+          <div class="question-image">
+            YOUR GRANDFATHER'S TIME CARD
+          </div>
+
+          <div class="question-content">
+            <div class="question-number">
+              CASE FILE #001
+            </div>
+
+            <h3>
+              Why Do We Work 40 Hours?
+            </h3>
+
+            <p>
+              Somehow your grandfather's factory schedule became your calendar invite.
+            </p>
+          </div>
+        </a>
+
+        <a href="#" class="question-card">
+          <div class="question-image">
+            TIP JAR / RECEIPT / RESTAURANT IMAGE
+          </div>
+
+          <div class="question-content">
+            <div class="question-number">
+              CASE FILE #002
+            </div>
+
+            <h3>
+              Why Do We Tip?
+            </h3>
+
+            <p>
+              We invented a system where the customer occasionally handles payroll.
+            </p>
+          </div>
+        </a>
+
+        <a href="#" class="question-card">
+          <div class="question-image">
+            TIME TRAVEL SCREENSHOT
+          </div>
+
+          <div class="question-content">
+            <div class="question-number">
+              SPECIAL INVESTIGATION
+            </div>
+
+            <h3>
+              Did This Man Time Travel?
+            </h3>
+
+            <p>
+              The internet says yes. Unfortunately, the evidence has encountered Bryan.
+            </p>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+
+      <div class="about-photo">
+        PHOTO OF BRYAN<br><br>
+        Slightly serious.<br>
+        Slightly suspicious.
+      </div>
+
+      <div>
+
+        <h2>
+          WHY<br>
+          <span>WHY?</span>
+        </h2>
+
+        <div class="about-copy">
+
+          <p>
+            Hi. I'm Bryan. <strong>With a Y.</strong>
+          </p>
+
+          <p>
+            I have a habit of wondering why completely normal things are normal.
+          </p>
+
+          <p>
+            Why do we work five days a week? Why do restaurants expect us to calculate
+            part of their employees' compensation? Why are there seven days in a week?
+            Why do we shake hands? And why does somebody on the internet claim to have
+            traveled through time every six months?
+          </p>
+
+          <p>
+            So I started looking into it.
+          </p>
+
+          <p>
+            <strong>Bryan With a Why</strong> is a collection of unnecessary
+            investigations into ordinary things, strange history, human behavior,
+            and questions nobody asked me to answer.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="submit" id="submit">
+    <div class="container submit-inner">
+
+      <h2>
+        WHAT SHOULD<br>
+        I ASK WHY ABOUT?
+      </h2>
+
+      <p>
+        Send me something completely normal that makes absolutely no sense
+        once you think about it for more than thirty seconds.
+      </p>
+
+      <a href="mailto:hello@bryanwhy.com" class="btn">
+        Submit a Question →
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Bryan With a Why
+      </div>
+
+      <div class="footer-links">
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">Instagram</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
