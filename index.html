@@ -4,20 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Bryan With a Why | Questions Nobody Asked Me to Answer</title>
+  <title>Bryan With a Why | Strange History, Everyday Questions & Curious Investigations</title>
 
   <meta
     name="description"
-    content="Bryan With a Why explores strange history, ordinary things, human behavior, and questions that make less sense the longer you think about them."
+    content="Bryan With a Why explores strange history, everyday questions, human behavior, cultural quirks, and the stories behind things we usually take for granted."
   />
 
+  <meta
+    name="keywords"
+    content="Bryan With a Why, Bryan Why, history videos, strange history, everyday questions, why do we work 40 hours, why do we tip, curious questions, documentary comedy, educational YouTube"
+  />
+
+  <meta name="author" content="Bryan" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://bryanwhy.com/" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Bryan With a Why" />
   <meta
     property="og:description"
-    content="Questions nobody asked me to answer."
+    content="Unnecessarily serious investigations into ordinary things, strange history, human behavior, and questions nobody asked Bryan to answer."
   />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bryanwhy.com/" />
+  <meta property="og:image" content="https://bryanwhy.com/images/40_hours.png" />
+  <meta property="og:site_name" content="Bryan With a Why" />
 
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bryan With a Why" />
+  <meta
+    name="twitter:description"
+    content="Questions nobody asked me to answer. Strange history, everyday mysteries, and curious investigations."
+  />
+  <meta name="twitter:image" content="https://bryanwhy.com/images/40_hours.png" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#f1eadc" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -25,6 +52,39 @@
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&family=Special+Elite&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://bryanwhy.com/#website",
+        "url": "https://bryanwhy.com/",
+        "name": "Bryan With a Why",
+        "description": "Unnecessarily serious investigations into ordinary things, strange history, human behavior, and curious questions.",
+        "publisher": {
+          "@id": "https://bryanwhy.com/#person"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@bryanwawhy"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://bryanwhy.com/#person",
+        "name": "Bryan",
+        "url": "https://bryanwhy.com/",
+        "image": "https://bryanwhy.com/images/bryan%20with%20a%20why%202.jpg",
+        "description": "Creator and host of Bryan With a Why, a video series exploring strange history, everyday questions, human behavior, and the origins of things we take for granted.",
+        "sameAs": [
+          "https://www.youtube.com/@bryanwawhy"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root {
@@ -77,8 +137,8 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -97,7 +157,7 @@
     }
 
     .nav-inner {
-      height: 78px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -105,10 +165,19 @@
     }
 
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-family: "Archivo Black", sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       letter-spacing: -0.04em;
       text-transform: uppercase;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
     }
 
     .brand span {
@@ -234,17 +303,16 @@
 
     .evidence-photo {
       aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
-        #b8b0a2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Special Elite", monospace;
-      font-size: 1.1rem;
-      text-align: center;
-      padding: 30px;
+      overflow: hidden;
       border: 1px solid rgba(0,0,0,0.25);
+      background: #b8b0a2;
+    }
+
+    .evidence-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.9) contrast(1.04);
     }
 
     .evidence-label {
@@ -266,7 +334,7 @@
       box-shadow: 3px 3px 0 var(--ink);
     }
 
-    /* QUESTION STRIP */
+    /* TICKER */
 
     .ticker {
       border-bottom: 2px solid var(--ink);
@@ -297,12 +365,13 @@
       from {
         transform: translateX(0);
       }
+
       to {
         transform: translateX(-50%);
       }
     }
 
-    /* SECTIONS */
+    /* GENERAL SECTIONS */
 
     section {
       padding: 90px 0;
@@ -349,17 +418,16 @@
 
     .feature-image {
       min-height: 460px;
-      background:
-        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-        #8d887e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-      font-family: "Special Elite", monospace;
-      font-size: 1.3rem;
-      text-align: center;
+      overflow: hidden;
       border-right: 2px solid var(--ink);
+      background: #8d887e;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      object-fit: cover;
     }
 
     .feature-copy {
@@ -439,14 +507,15 @@
 
     .question-image {
       aspect-ratio: 16 / 10;
-      background: #aaa295;
+      overflow: hidden;
       border-bottom: 2px solid var(--ink);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Special Elite", monospace;
-      text-align: center;
-      padding: 20px;
+      background: #aaa295;
+    }
+
+    .question-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .question-content {
@@ -473,6 +542,53 @@
       line-height: 1.6;
     }
 
+    /* EVIDENCE STRIP */
+
+    .evidence-strip {
+      background: #ddd3c1;
+      border-bottom: 2px solid var(--ink);
+      overflow: hidden;
+    }
+
+    .evidence-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      align-items: center;
+    }
+
+    .evidence-item {
+      background: var(--paper);
+      padding: 12px 12px 32px;
+      border: 1px solid rgba(0,0,0,0.25);
+      box-shadow: 5px 5px 0 rgba(0,0,0,0.18);
+    }
+
+    .evidence-item:nth-child(1) {
+      transform: rotate(-2deg);
+    }
+
+    .evidence-item:nth-child(2) {
+      transform: rotate(1.5deg);
+    }
+
+    .evidence-item:nth-child(3) {
+      transform: rotate(-1deg);
+    }
+
+    .evidence-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      filter: grayscale(0.25) contrast(1.04);
+    }
+
+    .evidence-caption {
+      font-family: "Special Elite", monospace;
+      margin-top: 13px;
+      text-align: center;
+    }
+
     /* ABOUT */
 
     .about {
@@ -490,16 +606,17 @@
 
     .about-photo {
       border: 2px solid var(--paper);
-      min-height: 500px;
-      background: #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Special Elite", monospace;
+      height: 520px;
+      overflow: hidden;
       transform: rotate(-2deg);
       box-shadow: 10px 10px 0 var(--red);
-      text-align: center;
-      padding: 30px;
+      background: #444;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .about h2 {
@@ -523,6 +640,35 @@
 
     .about-copy strong {
       color: white;
+    }
+
+    /* YOUTUBE CTA */
+
+    .youtube-cta {
+      background: var(--paper);
+      border-bottom: 2px solid var(--ink);
+      text-align: center;
+    }
+
+    .youtube-cta-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .youtube-cta h2 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      margin: 0 0 24px;
+    }
+
+    .youtube-cta p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 30px;
     }
 
     /* SUBMIT */
@@ -589,7 +735,8 @@
         grid-template-columns: 1fr;
       }
 
-      .question-grid {
+      .question-grid,
+      .evidence-strip-grid {
         grid-template-columns: 1fr;
       }
 
@@ -612,7 +759,7 @@
       }
 
       .about-photo {
-        min-height: 380px;
+        height: 420px;
       }
     }
 
@@ -641,6 +788,10 @@
       .red-note {
         right: -5px;
       }
+
+      .brand-text {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -649,21 +800,40 @@
 
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#" class="brand">BRYAN WITH A <span>WHY</span></a>
+
+      <a href="/" class="brand" aria-label="Bryan With a Why home">
+        <img src="images/Bwy_logo.png" alt="Bryan With a Why logo">
+        <span class="brand-text">
+          BRYAN WITH A <span>WHY</span>
+        </span>
+      </a>
 
       <div class="nav-links">
         <a href="#questions">Questions</a>
         <a href="#about">Why?</a>
         <a href="#watch">Watch</a>
+        <a
+          href="https://www.youtube.com/@bryanwawhy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
+        </a>
         <a href="#submit">Ask Something</a>
       </div>
+
     </div>
   </nav>
 
+
+  <!-- HERO -->
+
   <header class="hero">
+
     <div class="container hero-grid">
 
       <div>
+
         <div class="eyebrow">
           AN UNNECESSARILY SERIOUS INVESTIGATION
         </div>
@@ -675,39 +845,61 @@
         </h1>
 
         <p class="hero-copy">
-          I have a habit of wondering why completely normal things are normal.
-          Then I look into them until they become <strong>significantly less normal.</strong>
+          Strange history, everyday mysteries, human behavior, and the stories
+          behind things we usually accept without asking questions.
+          I start with <strong>why</strong> and keep digging until the answer gets weird.
         </p>
 
         <div class="hero-actions">
-          <a href="#watch" class="btn btn-primary">
-            Watch the Latest Rabbit Hole →
+
+          <a
+            href="https://www.youtube.com/@bryanwawhy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Watch on YouTube →
           </a>
 
           <a href="#questions" class="btn btn-secondary">
-            See All Questions
+            See the Questions
           </a>
+
         </div>
+
       </div>
 
+
       <div class="evidence-card">
+
         <div class="evidence-photo">
-          PLACE A STRANGE PHOTO / SCREENSHOT / FRAME FROM THE LATEST VIDEO HERE
+
+          <img
+            src="images/40_hours.png"
+            alt="Why do we work 40 hours a week video from Bryan With a Why"
+          >
+
         </div>
 
         <div class="evidence-label">
-          EXHIBIT A: This seemed normal five minutes ago.
+          EXHIBIT A: Your grandfather's work week.
         </div>
 
         <div class="red-note">
           BUT WHY?
         </div>
+
       </div>
 
     </div>
+
   </header>
 
-  <div class="ticker">
+
+  <!-- MOVING QUESTIONS -->
+
+  <div class="ticker" aria-label="Questions explored by Bryan With a Why">
+
     <div class="ticker-track">
 
       <span><strong>WHY</strong> DO WE WORK 40 HOURS?</span>
@@ -723,49 +915,73 @@
       <span><strong>WHY</strong> DO WE SHAKE HANDS?</span>
 
     </div>
+
   </div>
 
+
+  <!-- FEATURED -->
+
   <section class="featured" id="watch">
+
     <div class="container">
 
       <div class="section-heading">
-        <h2>THE LATEST<br>RABBIT HOLE</h2>
+
+        <h2>
+          THE LATEST<br>
+          RABBIT HOLE
+        </h2>
 
         <p>
           One question. Too much research. Eventually, an answer.
           Usually.
         </p>
+
       </div>
+
 
       <article class="feature-card">
 
         <div class="feature-image">
-          YOUTUBE THUMBNAIL / VIDEO IMAGE
+
+          <img
+            src="images/40_hours.png"
+            alt="Bryan With a Why investigation into the history of the 40-hour work week"
+          >
+
         </div>
+
 
         <div class="feature-copy">
 
           <div class="stamp">
-            CASE FILE #002
+            CASE FILE #001
           </div>
 
           <h3>
-            Why Do We Tip?
+            Why Do We Work 40 Hours a Week?
           </h3>
 
           <p>
-            At some point we built a system where a restaurant tells you the price
-            of dinner, then hands you a small math problem involving the employee's
-            compensation.
+            Five days. Eight hours a day. Forty hours every week.
           </p>
 
           <p>
-            Which raises an extremely reasonable question:
-            <strong>why are we doing this?</strong>
+            It's such a familiar part of modern life that it barely feels like
+            something anyone actually invented.
           </p>
 
-          <a href="#" class="text-link">
-            Watch the Investigation →
+          <p>
+            But somebody did.
+          </p>
+
+          <a
+            href="https://www.youtube.com/@bryanwawhy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-link"
+          >
+            Watch on YouTube →
           </a>
 
         </div>
@@ -773,27 +989,54 @@
       </article>
 
     </div>
+
   </section>
 
+
+  <!-- QUESTIONS -->
+
   <section class="questions" id="questions">
+
     <div class="container">
 
       <div class="section-heading">
-        <h2>RECENT<br>QUESTIONS</h2>
+
+        <h2>
+          RECENT<br>
+          QUESTIONS
+        </h2>
 
         <p>
-          Ordinary things become much stranger when you ask where they came from.
+          Ordinary things become much stranger when you ask where they came from,
+          who decided them, and why we still do them.
         </p>
+
       </div>
+
 
       <div class="question-grid">
 
-        <a href="#" class="question-card">
+
+        <!-- CARD 1 -->
+
+        <a
+          href="https://www.youtube.com/@bryanwawhy"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="question-card"
+        >
+
           <div class="question-image">
-            YOUR GRANDFATHER'S TIME CARD
+
+            <img
+              src="images/40_hours.png"
+              alt="Why do we work 40 hours a week?"
+            >
+
           </div>
 
           <div class="question-content">
+
             <div class="question-number">
               CASE FILE #001
             </div>
@@ -805,15 +1048,32 @@
             <p>
               Somehow your grandfather's factory schedule became your calendar invite.
             </p>
+
           </div>
+
         </a>
 
-        <a href="#" class="question-card">
+
+        <!-- CARD 2 -->
+
+        <a
+          href="https://www.youtube.com/@bryanwawhy"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="question-card"
+        >
+
           <div class="question-image">
-            TIP JAR / RECEIPT / RESTAURANT IMAGE
+
+            <img
+              src="images/y-tho.jpg"
+              alt="Why do we tip?"
+            >
+
           </div>
 
           <div class="question-content">
+
             <div class="question-number">
               CASE FILE #002
             </div>
@@ -825,15 +1085,32 @@
             <p>
               We invented a system where the customer occasionally handles payroll.
             </p>
+
           </div>
+
         </a>
 
-        <a href="#" class="question-card">
+
+        <!-- CARD 3 -->
+
+        <a
+          href="https://www.youtube.com/@bryanwawhy"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="question-card"
+        >
+
           <div class="question-image">
-            TIME TRAVEL SCREENSHOT
+
+            <img
+              src="images/dunno.jpg"
+              alt="Time travel investigation from Bryan With a Why"
+            >
+
           </div>
 
           <div class="question-content">
+
             <div class="question-number">
               SPECIAL INVESTIGATION
             </div>
@@ -845,22 +1122,106 @@
             <p>
               The internet says yes. Unfortunately, the evidence has encountered Bryan.
             </p>
+
           </div>
+
         </a>
 
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- EVIDENCE WALL -->
+
+  <section class="evidence-strip">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          THE<br>
+          EVIDENCE
+        </h2>
+
+        <p>
+          Historical photographs, strange details, and things found while asking
+          questions that probably could have been left alone.
+        </p>
+
+      </div>
+
+
+      <div class="evidence-strip-grid">
+
+
+        <div class="evidence-item">
+
+          <img
+            src="images/frances_perkins.jpg"
+            alt="Frances Perkins and the history of American labor"
+          >
+
+          <div class="evidence-caption">
+            EXHIBIT B — Frances Perkins enters the story.
+          </div>
+
+        </div>
+
+
+        <div class="evidence-item">
+
+          <img
+            src="images/baby_truman.jpg"
+            alt="Historical photograph featured in Bryan With a Why"
+          >
+
+          <div class="evidence-caption">
+            EXHIBIT C — Things are getting weird.
+          </div>
+
+        </div>
+
+
+        <div class="evidence-item">
+
+          <img
+            src="images/y-tho.jpg"
+            alt="Why though?"
+          >
+
+          <div class="evidence-caption">
+            EXHIBIT D — A reasonable follow-up question.
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
   <section class="about" id="about">
+
     <div class="container about-grid">
 
       <div class="about-photo">
-        PHOTO OF BRYAN<br><br>
-        Slightly serious.<br>
-        Slightly suspicious.
+
+        <img
+          src="images/bryan with a why 2.jpg"
+          alt="Bryan, creator and host of Bryan With a Why"
+        >
+
       </div>
+
 
       <div>
 
@@ -880,10 +1241,10 @@
           </p>
 
           <p>
-            Why do we work five days a week? Why do restaurants expect us to calculate
-            part of their employees' compensation? Why are there seven days in a week?
-            Why do we shake hands? And why does somebody on the internet claim to have
-            traveled through time every six months?
+            Why do we work five days a week? Why do restaurants expect us to
+            calculate part of their employees' compensation? Why are there seven
+            days in a week? Why do we shake hands? And why does somebody on the
+            internet claim to have traveled through time every six months?
           </p>
 
           <p>
@@ -891,9 +1252,14 @@
           </p>
 
           <p>
-            <strong>Bryan With a Why</strong> is a collection of unnecessary
-            investigations into ordinary things, strange history, human behavior,
-            and questions nobody asked me to answer.
+            <strong>Bryan With a Why</strong> is a collection of curious investigations
+            into ordinary things, strange history, culture, human behavior, and the
+            origins of things we usually take for granted.
+          </p>
+
+          <p>
+            The goal is simple: ask better questions, follow the rabbit hole,
+            and see where it goes.
           </p>
 
         </div>
@@ -901,9 +1267,45 @@
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- YOUTUBE CTA -->
+
+  <section class="youtube-cta">
+
+    <div class="container youtube-cta-inner">
+
+      <h2>
+        MORE QUESTIONS.<br>
+        MORE RABBIT HOLES.
+      </h2>
+
+      <p>
+        Watch Bryan With a Why on YouTube for videos about strange history,
+        everyday mysteries, cultural habits, human behavior, and questions
+        that get more interesting the longer you think about them.
+      </p>
+
+      <a
+        href="https://www.youtube.com/@bryanwawhy"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Visit the YouTube Channel →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ASK A QUESTION -->
+
   <section class="submit" id="submit">
+
     <div class="container submit-inner">
 
       <h2>
@@ -921,9 +1323,14 @@
       </a>
 
     </div>
+
   </section>
 
+
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="container footer-inner">
 
       <div>
@@ -931,12 +1338,27 @@
       </div>
 
       <div class="footer-links">
-        <a href="#">YouTube</a>
-        <a href="#">TikTok</a>
-        <a href="#">Instagram</a>
+
+        <a
+          href="https://www.youtube.com/@bryanwawhy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
+        </a>
+
+        <a href="#">
+          TikTok
+        </a>
+
+        <a href="#">
+          Instagram
+        </a>
+
       </div>
 
     </div>
+
   </footer>
 
 </body>
